@@ -1,5 +1,10 @@
+interface SkillCardProps {
+  name: string,
+  imageUrl: string,
+  link: string
+}
 
-const SkillCard = ({imageUrl ,name, link}) => {
+const SkillCard = ({imageUrl ,name, link}: SkillCardProps) => {
     return (
     <a href={link} target="_self" className="skill card h-full w-96 xl:w-1/4 rounded-3xl p-10 shadow-md bg-stone-300/25 hover:scale-105 transition pb-12">
       <div className="image-container flex justify-center">

@@ -8,5 +8,11 @@ export default {
     extend: {},
   },
   plugins: [],
+  purge: {
+    safelist: [
+      'rotate-45',
+      '-rotate-45'
+    ]
+  }
 }
 

@@ -1,42 +1,45 @@
-import Headroom from "react-headroom"
-import Header from "./Header"
+
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import { faLinkedin, faGithub, faFacebook } from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import Typewriter from 'typewriter-effect';
+import profilePic from '../assets/pp-alt2.jpg'
 
 const Hero = () => {
-
+// lg:bg-[url('./assets/hero-bg.jpg')]
+  const roles = ['Software Engineer', 'Frontend Developer'];
   return (
-    <div className="h-dvh min:h-dvh relative hero-background bg-gradient-to-t from-stone-200/50 to-orange-200/45 lg:bg-[url('./assets/hero-bg.jpg')]"  id="home">
-      <Headroom>
-        <Header />
-      </Headroom>
-
-      <div className="flex justify-center min-h-[calc(100dvh-20%)]">
-        <div className="content-container flex flex-col justify-center lg:justify-start xl:justify-center lg:flex-row">
-          <div className="hero-left flex flex-col w-screen lg:w-3/5 justify-center gap-8 px-8 text-gray-800">
-              <h2 className="text-4xl xl:text-5xl w-full lg:w-4/5">I'm <span className="capitalize font-bold shadow-md px-4 py-2 ">Reymark Bacalso</span></h2>
-              <h4 className="text-2xl xl:text-3xl w-4/5">Software Engineer | Frontend Developer | Backend Developer</h4>
-
-              <div className="media-links">
-                <ul className=" flex gap-8">
-
-                  <li className="hover:scale-110 transition"><a href="#"><FontAwesomeIcon icon={faLinkedin} size="2xl"/></a></li>
-                  <li className="hover:scale-110 transition"><a href="#"><FontAwesomeIcon icon={faGithub} size="2xl" /></a></li>
-                  <li className="hover:scale-110 transition"><a href="#"><FontAwesomeIcon icon={faFacebook} size="2xl" /></a></li>
-                </ul>
-              </div>
+    <>
+     <div  className='h-svh  bg-stone-200 text-gray-500 sm:flex sm:justify-center p-4'>
+        <div className='h-svh sm:h-[calc(100vh-20%)] w-full sm:max-w-screen-sm md:max-w-screen-md  lg:max-w-screen-lg flex flex-col sm:flex-row-reverse gap-4 justify-center sm:justify-center items-center'>
+          <div className="h-52  w-52 sm:h-60 sm:w-60 md:h-80 md:w-80 bg-gray-800/75 rounded-full border-4  overflow-hidden text-center flex-shrink-0 transition hover:scale-105 shadow-xl">
+            <img src={profilePic} alt="test" className='h-full w-full bg-transparent object-contain' />
           </div>
-          <div className="hero-right w-2/5 flex items-center justify-center">
-            <div className="image-container h-[25rem] w-[25rem] xl:h-[30rem] xl:w-[30rem] relative items-center justify-center shadow-xl rounded-full bg-gray-300/50 hover:scale-105 transition hidden lg:flex">
-              <img src="" alt="Reymark" className="overflow-hidden h-full w-full rounded-full" />
+          <div className='w-full flex-grow-0 text-center sm:text-left text-gray-800 p-4'>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl xl:text-6xl">I'm <span className='font-bold tracking-wide'>Reymark Bacalso</span></h1>
+            <h3 className='text-xl sm:text-2xl md:text-3xl xl:text-4xl mt-1 sm:mt-4'>
+              <Typewriter
+                options={{
+                  strings: roles,
+                  autoStart:  true,
+                  loop:true,
+                  deleteSpeed: 10
+                }}
+              />
+              {/* Software Engineer | Frontend Developer */}
+            </h3>
+            <div className='min-h-36 sm:min-h-0 p-4 sm:px-0'>
+              <ul className="h-full sm:w-full flex justify-center items-center sm:justify-start gap-4">
+                <li className="hover:scale-110 transition"><a href="#"><FontAwesomeIcon icon={faLinkedin} size="2xl"/></a></li>
+                {/* <li className="hover:scale-110 transition"><a href="#"><FontAwesomeIcon icon={faGithub} size="xl" /></a></li>
+                <li className="hover:scale-110 transition"><a href="#"><FontAwesomeIcon icon={faFacebook} size="xl" /></a></li> */}
+              </ul>
             </div>
-
           </div>
         </div>
-      </div>
 
-    </div>
+     </div>
+    </>
   )
 }
 

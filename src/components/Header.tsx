@@ -1,22 +1,43 @@
+import { faBars } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { useState } from "react"
 
 
 const Header = () => {
+  const [showNav, setShowNav] = useState(false);
+
+  const handleToggleShowNav =  () => {
+    setShowNav(!showNav)
+  }
+
+  const handleNavClick = () => {
+    setShowNav(false)
+  }
+
   return (
-    <div className="min-h-20 py-2 px-4 flex justify-start lg:justify-center">
-      <div className="content-container flex items-center justify-between">
-        <div className="logo ">
-          {/* <img src="" alt="logo" /> */}
-          <div className=" text-5xl py-4 px-8 bg-slate-200/25 antaliased font-bold tracking-widest relative mix-blend-screen hover:scale-105 transition">MRCSBCLS</div>
+    <>
+      <header className="min-w-screen items-center sm:flex sm:justify-center sm:bg-white">
+        <div className="w-full sm:max-w-screen-xl sm:flex sm:justify-between">
+          <div className="flex items-center justify-between relative z-20 bg-white px-2">
+            <div id="logo" className="">
+              <h1 className="text-xl sm:text-2xl md:text-3xl tracking-widest font-semibold text-gray-800 md:py-2 transition">MRCSBCLS</h1>
+            </div>
+
+            <button className="p-2  hover:scale-105 text-gray-800 sm:hidden" onClick={handleToggleShowNav}>
+              <FontAwesomeIcon icon={faBars}/>
+            </button>
+          </div>
+
+          <div id="nav-links" className={`${showNav ? 'block': 'hidden'} tracking-wide px-2 pt-2 pb-2 sm:py-2 sm:flex sm:gap-1 transition bg-white shadow-lg sm:shadow-none`}>
+            <a href="#home" className="block text-gray-800 font-semibold sm:font-semibold hover:bg-gray-50  sm:hover:bg-transparent sm:hover:scale-105 px-2 sm:px-4 sm:py-1 transition leading-loose" onClick={handleNavClick}>Home</a>
+            <a href="#about"  className="block mt-1 sm:mt-0 text-gray-800 font-semibold sm:font-semibold hover:bg-gray-50 sm:hover:bg-transparent sm:hover:scale-105  px-2 sm:px-4 sm:py-1 transition leading-loose" onClick={handleNavClick}>About Me</a>
+            <a href="#experience"  className="block mt-1 sm:mt-0 text-gray-800 font-semibold sm:font-semibold hover:bg-gray-50 sm:hover:bg-transparent sm:hover:scale-105  px-2 sm:px-4 sm:py-1 transition leading-loose" onClick={handleNavClick}>Experience</a>
+            <a href="#contact" className="block rounded-sm sm:rounded-md mt-2 sm:mt-0 text-white bg-stone-400 text-center sm:text-left font-semibold sm:font-semibold hover:bg-gray-5 sm:hover:scale-105  p-2 sm:py-1 sm:px-4  sm:ml-2 transition leading-loose" onClick={handleNavClick}>Contact</a>
+          </div>
         </div>
-        <div className="nav">
-          <ul className="list-style-none gap-6 text-3xl hidden lg:flex transition tracking-wide ">
-            <li className="hover:scale-105 transition "><a href="#home">Home</a></li>
-            <li className="hover:scale-105 transition "><a href="#about">About</a></li>
-            <li className="hover:scale-105 transition "> <a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+
+      </header>
+    </>
   )
 }
 

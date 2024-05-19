@@ -1,9 +1,7 @@
 
-
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import Typewriter from 'typewriter-effect';
 import profilePic from '../assets/pp-alt2.jpg'
+import linkedInImg from '../assets/skill-icons/linkedin.svg'
 
 const Hero = () => {
 // lg:bg-[url('./assets/hero-bg.jpg')]
@@ -30,7 +28,11 @@ const Hero = () => {
             </h3>
             <div className='min-h-36 sm:min-h-0 p-4 sm:px-0'>
               <ul className="h-full sm:w-full flex justify-center items-center sm:justify-start gap-4">
-                <li className="hover:scale-110 transition"><a href="#"><FontAwesomeIcon icon={faLinkedin} size="2xl"/></a></li>
+                <li className="hover:scale-110 transition">
+                  <a href="#">
+                    <img src={linkedInImg} alt="linkedin" className='h-8 w-8'/>
+                  </a>
+                </li>
                 {/* <li className="hover:scale-110 transition"><a href="#"><FontAwesomeIcon icon={faGithub} size="xl" /></a></li>
                 <li className="hover:scale-110 transition"><a href="#"><FontAwesomeIcon icon={faFacebook} size="xl" /></a></li> */}
               </ul>

@@ -8,8 +8,8 @@ const Timeline = ({experiences}: {experiences: ExperienceProps[]}) => {
   return (
     <div className="">
 
-        {experiences.map((experience) => (
-          <TimelineItem {...experience}/>
+        {experiences.map((experience, index) => (
+          <TimelineItem {...experience} key={index}/>
         ))}
 
     </div>

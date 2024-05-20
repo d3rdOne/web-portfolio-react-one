@@ -12,14 +12,11 @@ const SkillBar = ({maxLevel, level, hidden = false}: {maxLevel: number, level: n
   }
 
   useEffect(() => {
-      setFill(Math.ceil((level / maxLevel) * 100) )
-      console.log(hidden)
+      setFill(Math.ceil((level / maxLevel) * 100) );
   }, [])
 
-
-
   return (
-    <div className={`h-2 sm:h-2 w-full sm:w-2/3 rounded-md bg-gray-200 flex overflow-hidden relative items-center border-2 border-black ${hidden && 'hidden'}`}>
+    <div className={`h-2 sm:h-2 w-full sm:w-2/3 rounded-md bg-gray-200 flex overflow-hidden relative items-center border-[1px] border-black ${hidden && 'hidden'}`}>
       <div className={`h-full text-sm  rounded-r-sn ${barColor} bar-transition`} style={{width: `${fill}%`}}></div>
     </div>
   )

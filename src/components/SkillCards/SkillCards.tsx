@@ -1,33 +1,61 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import SkillCard from "./SkillCard";
-import angularImg from '../../assets/skill-icons/angular.svg';
-import reactImg from '../../assets/skill-icons/react.svg';
-import javascriptImg from '../../assets/skill-icons/javascript.svg';
-import htmlImg from '../../assets/skill-icons/html.svg';
-import scssImage from '../../assets/skill-icons/sass.svg';
-import tailwindImage from '../../assets/skill-icons/tailwindcss.svg';
-import npmImage from '../../assets/skill-icons/npm.svg'
-import cssImg from '../../assets/skill-icons/css-3.svg'
+import { SkillsData } from '../../data/Data'
+import { createContext, useEffect, useState } from "react";
+import { motion } from 'framer-motion';
 
 
+export const SkillCardContext = createContext({});
 const SkillCards = () => {
-  const skills = [
-    { name: 'Angular', imageUrl: angularImg, link:'#', level: 80 , maxLevel: 100},
-    { name: 'React', imageUrl:reactImg, link: '#' , level: 50 , maxLevel: 100},
-    { name: 'HTML', imageUrl: htmlImg, link: '#', level: 80 , maxLevel: 100},
-    { name: 'JavaScript', imageUrl: javascriptImg, link: '#', level: 80 , maxLevel: 100},
-    { name: 'CSS', imageUrl: cssImg, link: '#', level: 80 , maxLevel: 100},
-    { name: 'Scss', imageUrl: scssImage, link: '#', level: 80 , maxLevel: 100},
-    { name: 'tailwind', imageUrl: tailwindImage, link: '#', level: 50 , maxLevel: 100},
-    { name: 'ngxs', imageUrl: '', link: '#', level: 80 , maxLevel: 100},
-    { name: 'npm', imageUrl: npmImage, link: '#', level: 80 , maxLevel: 100}
-  ];
+
+  const [skillList, setSkillList] = useState<any[]>([{name:'',imageUrl: '', link: '', level: 0, maxLevel: 100  }])
+
+  useEffect(() => {
+    setSkillList(SkillsData);
+  }, [])
+
+  const list = {
+    notShown: {
+      opacity: 0,
+      transition: {
+        when: 'afterChildren'
+      }
+    },
+    shown: {
+      opacity: 1,
+      transition: {
+        when: 'beforeChildren',
+        staggerChildren: 0.1,
+        delay:0
+      }
+    }
+  }
+
+  const item = {
+    notShown : {
+      translateY: 50,
+      opacity: 0
+    },
+    shown: {
+      translateY: 0,
+      opacity: 1
+    }
+  }
 
   return (
-    <div className="px-4 content-container flex flex-wrap justify-center gap-2 sm:gap-4 mt-4 pb-8 overflow-x-auto overflow-y-auto max-h-[30rem] sm:max-h-[40rem] relative ">
-      {skills.map((skill, index) => (
-       <SkillCard {...skill} key={index}/>
-      ))}
-    </div>
+    <SkillCardContext.Provider value={item}>
+       <motion.div
+        variants={list}
+        whileInView='shown'
+        initial='notShown'
+        viewport={{once: true}}
+        className="px-4 content-container flex flex-wrap justify-center gap-2 sm:gap-4 py-8 overflow-x-auto overflow-y-auto sm:overflow-hidden max-h-full relative ">
+          {(skillList?.length > 0) && skillList.map((skill, index) => (
+            <SkillCard {...skill} key={index} index={index} />
+          ))}
+        </motion.div>
+    </SkillCardContext.Provider>
+
   )
 }
 

@@ -16,9 +16,9 @@ export const AnimateChangeInHeight: React.FC<AnimateChangeInHeightProps> = ({ ch
     if (containerRef.current) {
       const resizeObserver = new ResizeObserver((entries) => {
         // We only have one entry, so we can use entries[0].
-        const observedHeight = entries[0].contentRect.height
-        // added 8 px to fix clipping
-        setHeight(observedHeight + 8 )
+        const observedHeight = entries[0].contentRect.height;
+
+        setHeight(observedHeight )
       })
 
       resizeObserver.observe(containerRef.current)
@@ -31,8 +31,8 @@ export const AnimateChangeInHeight: React.FC<AnimateChangeInHeightProps> = ({ ch
   }, [])
 
   return (
-<motion.div className={className} style={{ height }} animate={{ height }} transition={{ duration: 0.2 }} onClick={handleClick}>
-      <div className="h-fit" ref={containerRef}>{children}</div>
+    <motion.div  className={className} style={{ height }} animate={{ height }} transition={{ duration: 0.2 }} onClick={handleClick}>
+      <div ref={containerRef}>{children}</div>
     </motion.div>
   )
 }

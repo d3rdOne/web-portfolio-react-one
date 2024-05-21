@@ -1,4 +1,5 @@
 import { useState } from "react"
+import {motion} from 'framer-motion'
 
 
 const Header = () => {
@@ -14,7 +15,11 @@ const Header = () => {
 
   return (
     <>
-      <header className="min-w-screen items-center md:flex md:justify-center md:bg-white">
+      <motion.header
+        initial={{opacity: 0, translateY: -40}}
+        animate={{opacity: 1, translateY: 0}}
+        transition={{delay: 0.8}}
+        className="min-w-screen items-center md:flex md:justify-center md:bg-white">
         <div className="w-full md:max-w-screen-xl md:flex md:justify-between">
           <div className="flex items-center justify-between relative z-20 bg-white px-2">
             <div id="logo" className="">
@@ -37,7 +42,7 @@ const Header = () => {
           </div>
         </div>
 
-      </header>
+      </motion.header>
     </>
   )
 }

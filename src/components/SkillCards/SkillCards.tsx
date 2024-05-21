@@ -25,7 +25,7 @@ const SkillCards = () => {
       opacity: 1,
       transition: {
         when: 'beforeChildren',
-        staggerChildren: 0.1,
+        staggerChildren: 0.05,
         delay:0
       }
     }
@@ -33,7 +33,7 @@ const SkillCards = () => {
 
   const item = {
     notShown : {
-      translateY: 50,
+      translateY: 5,
       opacity: 0
     },
     shown: {

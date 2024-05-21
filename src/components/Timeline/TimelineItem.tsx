@@ -1,13 +1,14 @@
 import { useState } from "react"
 import { ExperienceProps } from "../Experience"
 import { AnimateChangeInHeight } from "../Utilities/AnimateChangeInHeight"
+import {motion} from 'framer-motion';
 
 const TimelineItem = ({company, time, role, description}: ExperienceProps) => {
   const [expand, setExpand] = useState(true)
 
 
   return (
-    <div className="relative pl-8 sm:pl-32 py-6 group sm:w-5/6 bg-gray-200">
+    <div className="relative pl-8 sm:pl-32 pt-6 last:pb-6 group sm:w-5/6 bg-gray-200">
           {/* Dot - Label */}
           <div className="font-caveat font-medium text-xl text-gray-900 mb-1 sm:mb-0"> {company}</div>
           {/* Ver0tical Line (::before) */}
@@ -16,9 +17,17 @@ const TimelineItem = ({company, time, role, description}: ExperienceProps) => {
               <div className="text-xl text-slate-900 font-medium"> {role}</div>
           </div>
 
-          <AnimateChangeInHeight className={`text-gray-900 mt-3  bg-white cursor-pointer text-md transition  tracking-normal px-4 py-1 pr-8 rounded-sm  border-2 border-transparent whitespace-pre-wrap font-mono ${expand ? 'line-clamp-none' : ' line-clamp-5'}`} handleClick={() => setExpand(!expand)} >
-              <p>{description}</p>
-          </AnimateChangeInHeight>
+          <motion.div
+            initial={{opacity: 0, translateX: "-50%"}}
+            whileInView={{opacity: 1, translateX: 1}}
+            transition={{duration: 0.4, delay: 0.1}}
+            viewport={{once: true}}
+            className="pt-2 pb-1 bg-whit text-gray-900 bg-white cursor-pointer text-md transition  tracking-normal px-4 pr-8 rounded-sm  border-2 border-transparent whitespace-pre-wrap font-mono font-medium">
+            <AnimateChangeInHeight className={` ${expand ? 'line-clamp-none' : ' line-clamp-5'}`} handleClick={() => setExpand(!expand)} >
+                {description}
+            </AnimateChangeInHeight>
+          </motion.div>
+
 
         </div>
   )

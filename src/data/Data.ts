@@ -43,3 +43,7 @@ export const ExperienceData = [
     description: `Developed a functional Angular application prototype for an open banking API monitoring system. Utilized routing, dependency injection, and implemented reusable UI components to improve efficiency.\nThe prototype served as a foundation for further development by the team.\nImplemented data visualization using Chart.js to display key metrics in an open banking API monitoring system.\nDeveloped and maintained REST APIs using Sprint Boot for an open banking business solution.\nContributed to the ongoing development and maintenance of c-commerce application features using AngularJS, leveraging routing, dependency injection, and data-binding for a responsive user interface.\nDeveloped and maintained middleware APIs using PHP for a Drupal-hosted c- commerce application, enabling seamless integration with external APIs.`
   }
 ]
+
+export const ProjectsData = [
+  {title: 'Project 1', img: '' , description: '', url: ''}
+]

@@ -34,11 +34,11 @@ const Header = () => {
           </div>
 
           <div id="nav-links" className={`${showNav ? 'block': 'hidden'} tracking-wide px-2 pt-2 pb-2 sm:py-2 md:flex md-:gap-1 transition bg-white shadow-lg sm:shadow-none`}>
-            <a href="#home" className="block text-gray-800 font-semibold sm:font-semibold hover:bg-gray-50  sm:hover:bg-transparent sm:hover:scale-105 px-2 sm:px-4 sm:py-1 transition leading-loose" onClick={handleNavClick}>Home</a>
-            <a href="#about"  className="block mt-1 sm:mt-0 text-gray-800 font-semibold sm:font-semibold hover:bg-gray-50 sm:hover:bg-transparent sm:hover:scale-105  px-2 sm:px-4 sm:py-1 transition leading-loose" onClick={handleNavClick}>About Me</a>
-            <a href="#experience"  className="block mt-1 sm:mt-0 text-gray-800 font-semibold sm:font-semibold hover:bg-gray-50 sm:hover:bg-transparent sm:hover:scale-105  px-2 sm:px-4 sm:py-1 transition leading-loose" onClick={handleNavClick}>Experience</a>
-            <a href="#projects"  className="block mt-1 sm:mt-0 text-gray-800 font-semibold sm:font-semibold hover:bg-gray-50 sm:hover:bg-transparent sm:hover:scale-105  px-2 sm:px-4 sm:py-1 transition leading-loose" onClick={handleNavClick}>Projects</a>
-            <a href="#contact" className="block rounded-sm sm:rounded-md mt-2 sm:mt-0 text-white bg-gray-400 text-center sm:text-left font-semibold sm:font-semibold hover:bg-gray-5 sm:hover:scale-105  p-2 sm:py-1 sm:px-4  sm:ml-2 transition leading-loose" onClick={handleNavClick}>Contact</a>
+            <a href="#home" className="block text-gray-800 font-semibold sm:font-semibold hover:bg-gray-50  md:hover:bg-transparent md:hover:scale-105 px-2 sm:px-4 sm:py-1 transition leading-loose" onClick={handleNavClick}>Home</a>
+            <a href="#about"  className="block mt-1 sm:mt-0 text-gray-800 font-semibold sm:font-semibold hover:bg-gray-50 md:hover:bg-transparent md:hover:scale-105  px-2 sm:px-4 sm:py-1 transition leading-loose" onClick={handleNavClick}>About Me</a>
+            <a href="#experience"  className="block mt-1 sm:mt-0 text-gray-800 font-semibold sm:font-semibold hover:bg-gray-50 md:hover:bg-transparent md:hover:scale-105  px-2 sm:px-4 sm:py-1 transition leading-loose" onClick={handleNavClick}>Experience</a>
+            <a href="#projects"  className="block mt-1 sm:mt-0 text-gray-800 font-semibold sm:font-semibold hover:bg-gray-50 md:hover:bg-transparent md:hover:scale-105  px-2 sm:px-4 sm:py-1 transition leading-loose" onClick={handleNavClick}>Projects</a>
+            <a href="#contact" className="block rounded-sm sm:rounded-sm mt-2 sm:mt-0 text-white bg-slate-400 text-center sm:text-left font-semibold sm:font-semibold hover:bg-slate-400/80 md:hover:scale-105  p-2 sm:py-1 sm:px-4  sm:ml-2 transition leading-loose" onClick={handleNavClick}>Contact Me</a>
           </div>
         </div>
 

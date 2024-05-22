@@ -14,7 +14,7 @@ const SkillCards = () => {
     setSkillList(SkillsData);
   }, [])
 
-  const list = {
+  const   skillCards = {
     notShown: {
       opacity: 0,
       transition: {
@@ -31,7 +31,7 @@ const SkillCards = () => {
     }
   }
 
-  const item = {
+  const skillCard = {
     notShown : {
       translateY: 5,
       opacity: 0
@@ -43,9 +43,9 @@ const SkillCards = () => {
   }
 
   return (
-    <SkillCardContext.Provider value={item}>
+    <SkillCardContext.Provider value={skillCard}>
        <motion.div
-        variants={list}
+        variants={skillCards}
         whileInView='shown'
         initial='notShown'
         viewport={{once: true}}

@@ -8,7 +8,7 @@ const TimelineItem = ({company, time, role, description}: ExperienceProps) => {
 
 
   return (
-    <div className="relative pl-8 sm:pl-32 pt-6 last:pb-6 group sm:w-5/6 bg-gray-200">
+    <div className="relative pl-8 sm:pl-32 pt-6 last:pb-6 group sm:w-5/6 bg-white">
           {/* Dot - Label */}
           <div className="font-caveat font-medium text-xl text-gray-900 mb-1 sm:mb-0"> {company}</div>
           {/* Ver0tical Line (::before) */}
@@ -18,11 +18,12 @@ const TimelineItem = ({company, time, role, description}: ExperienceProps) => {
           </div>
 
           <motion.div
-            initial={{opacity: 0, translateX: "-50%"}}
+            initial={{opacity: 0, translateX: "-5%"}}
             whileInView={{opacity: 1, translateX: 1}}
-            transition={{duration: 0.4, delay: 0.1}}
+            transition={{duration: 0.1, delay: 0}}
             viewport={{once: true}}
-            className="pt-2 pb-1 bg-whit text-gray-900 bg-white cursor-pointer text-md transition  tracking-normal px-4 pr-8 rounded-sm  border-2 border-transparent whitespace-pre-wrap font-mono font-medium">
+            // whileHover={{}}
+            className="pt-2 pb-1 bg-white text-gray-900 border-l-8  cursor-pointer text-md transition border-[1px] hover:border-slate-200 hover:tracking-normal px-4 pr-8 rounded-sm  border-transparent whitespace-pre-wrap font-mono font-medium text-sm">
             <AnimateChangeInHeight className={` ${expand ? 'line-clamp-none' : ' line-clamp-5'}`} handleClick={() => setExpand(!expand)} >
                 {description}
             </AnimateChangeInHeight>

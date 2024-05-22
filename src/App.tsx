@@ -12,7 +12,7 @@ import Projects from './components/Projects'
 function App() {
   return (
     <>
-      <div id="home" className='min-h-screen bg-gradient-to-b from-gray-200 to-slate-100 border-box scroll-smooth' >
+      <div id="home" className='min-h-screen bg-slate-50 border-box scroll-smooth' >
           <Headroom>
             <Header />
           </Headroom>

@@ -49,7 +49,7 @@ const SkillCards = () => {
         whileInView='shown'
         initial='notShown'
         viewport={{once: true}}
-        className="px-4 content-container flex flex-wrap justify-center gap-2 sm:gap-4 py-8 overflow-x-auto overflow-y-auto sm:overflow-hidden max-h-full relative ">
+        className="px-4 content-container flex flex-wrap justify-start gap-2 sm:gap-4 py-8 overflow-x-auto overflow-y-auto sm:overflow-hidden max-h-full relative ">
           {(skillList?.length > 0) && skillList.map((skill, index) => (
             <SkillCard {...skill} key={index} index={index} />
           ))}

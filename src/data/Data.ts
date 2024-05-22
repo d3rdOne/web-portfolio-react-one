@@ -7,7 +7,10 @@ import tailwindImage from '../assets/skill-icons/tailwindcss.svg';
 import npmImage from '../assets/skill-icons/npm.svg'
 import cssImg from '../assets/skill-icons/css-3.svg'
 import ngxsImg from '../assets/skill-icons/ngxs.png';
-import singleSPAImage from '../assets/skill-icons/single-spa.svg'
+import singleSPAImage from '../assets/skill-icons/single-spa.svg';
+import framerMotionImg from '../assets/skill-icons/framer-motion.svg';
+import gitImg from '../assets/skill-icons/git-icon.svg';
+import azureImg from '../assets/skill-icons/azure.svg';
 
 export const SkillsData = [
   { name: 'Angular', imageUrl: angularImg, link:'#', level: 80 , maxLevel: 100},
@@ -16,9 +19,12 @@ export const SkillsData = [
   { name: 'JavaScript', imageUrl: javascriptImg, link: '#', level: 80 , maxLevel: 100},
   { name: 'CSS', imageUrl: cssImg, link: '#', level: 80 , maxLevel: 100},
   { name: 'Scss', imageUrl: scssImage, link: '#', level: 80 , maxLevel: 100},
+  { name: 'Git', imageUrl: gitImg, link: '#', level: 50 , maxLevel: 100},
   { name: 'tailwind', imageUrl: tailwindImage, link: '#', level: 50 , maxLevel: 100},
   { name: 'ngxs', imageUrl: ngxsImg, link: '#', level: 80 , maxLevel: 100},
+  { name: 'framer motion', imageUrl: framerMotionImg, link: '#', level: 50 , maxLevel: 100},
   { name: 'npm', imageUrl: npmImage, link: '#', level: 80 , maxLevel: 100},
+  { name: 'Microsoft Azure', imageUrl: azureImg, link: '#', level: 50 , maxLevel: 100},
   { name: 'single-spa', imageUrl: singleSPAImage, link: '#', level: 80 , maxLevel: 100}
 ];
 
@@ -45,5 +51,5 @@ export const ExperienceData = [
 ]
 
 export const ProjectsData = [
-  {title: 'Project 1', img: '' , description: '', url: ''}
+  // {title: 'Project 1', img: '' , description: '', url: ''}
 ]

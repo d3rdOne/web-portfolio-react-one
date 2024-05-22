@@ -7,14 +7,14 @@ import linkedInImg from '../assets/skill-icons/linkedin.svg';
 import {motion } from 'framer-motion';
 
 const Hero = () => {
-  const roles = ['Software Engineer', 'Frontend Developer'];
+  const roles = ['Software Developer', 'Frontend Developer'];
   return (
     <>
-     <div  className="h-svh  bg-slate-50 text-gray-500 sm:flex sm:justify-center p-4 bg-[url('../assets/hero-bg.jpg')]">
+     <div  className="md:py-44 bg-white text-gray-500 sm:flex sm:justify-center p-4 bg-[url('../assets/hero-bg.jpg')]">
         <motion.div
           initial={{opacity:0}}
           animate={{opacity: 1, transition: {when: 'beforeChildren', staggerChildren: 0.1}}}
-          className='h-svh sm:h-[calc(100vh-20%)] w-full sm:max-w-screen-sm md:max-w-screen-md  lg:max-w-screen-lg flex flex-col sm:flex-row-reverse gap-4 justify-center sm:justify-center items-center'>
+          className='h-svh sm:h-full w-full sm:max-w-screen-sm md:max-w-screen-md  lg:max-w-screen-lg flex flex-col sm:flex-row-reverse gap-4 justify-center sm:justify-center items-center'>
           {/* Display Image */}
           <motion.div
             initial={{opacity: 0}}
@@ -26,13 +26,13 @@ const Hero = () => {
           <motion.div
             initial={{opacity: 0}}
             animate={{opacity: 1, transition: { duration: 1, when: 'beforeChildren', staggerChildren: 1}}}
-            className='w-full flex-grow-0 text-center sm:text-left text-gray-800 p-4'>
+            className='w-full flex-grow-0 text-center sm:text-left text-gray-900 p-4'>
             <motion.h1
               initial={{opacity: 0}}
               animate={{opacity: 1, transition: {delay: 0.2, duration: 1}}}
-              className="text-2xl sm:text-3xl md:text-4xl xl:text-6xl">I'm <span className='font-bold tracking-wide'>Reymark Bacalso</span>
+              className="text-3xl sm:text-4xl xl:text-6xl">I'm <span className='font-bold tracking-wide'>Reymark Bacalso</span>
             </motion.h1>
-            <h3 className='text-xl sm:text-2xl md:text-3xl xl:text-4xl mt-1 sm:mt-4'>
+            <h3 className='text-2xl sm:text-3xl xl:text-4xl mt-1 sm:mt-4'>
               <Typewriter
                 options={{
                   strings: roles,

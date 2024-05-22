@@ -8,7 +8,7 @@ interface AnimateChangeInHeightProps {
   handleClick? : () => void
 }
 
-export const AnimateChangeInHeight: React.FC<AnimateChangeInHeightProps> = ({ children, className, handleClick}) => {
+export const AnimateChangeInHeight: React.FC<AnimateChangeInHeightProps> = ({ children, className}) => {
   const containerRef = useRef<HTMLDivElement | null>(null)
   const [height, setHeight] = useState<number | 'auto'>('auto')
 
@@ -31,7 +31,7 @@ export const AnimateChangeInHeight: React.FC<AnimateChangeInHeightProps> = ({ ch
   }, [])
 
   return (
-    <motion.div  className={className} style={{ height }} animate={{ height }} transition={{ duration: 0.2 }} onClick={handleClick}>
+    <motion.div  className={className} style={{ height }} animate={{ height }} transition={{ duration: 0.2 }}>
       <div ref={containerRef}>{children}</div>
     </motion.div>
   )

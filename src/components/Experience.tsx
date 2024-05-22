@@ -19,8 +19,8 @@ const Experience = () => {
 
   return (
     <section id="experience" className="min-h-screen sm:min-h-[40rem] bg-white flex flex-col items-center px-8" >
-      <div className="w-full sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg pt-8">
-        <h2 className="text-2xl font-semibold tracking-wide">Experience</h2>
+      <div className="w-full sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-xl pt-8">
+        <h2 className="text-2xl font-semibold tracking-wide">Professional Experience</h2>
         <div>
           <Timeline experiences={experiences}/>
         </div>

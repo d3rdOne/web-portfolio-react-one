@@ -74,8 +74,8 @@ const Projects = () => {
           ))}
            {projects?.length === 0 && (
             <>
-              <h3 className="text-lg">Unfortunately, I have no works to show <span className="text-red-500 font-bold -tracking-wide">YET</span> due to the confidential nature of my previous projects...</h3>
-              {/* <h3 className="text-lg">Personal projects are currently under construction...</h3> */}
+              {/* <h3 className="text-lg">Unfortunately, I have no works to show <span className="text-red-500 font-bold -tracking-wide">YET</span> due to the confidential nature of my previous projects...</h3> */}
+              <h3 className="text-lg">Available soon...</h3>
             </>
 
           )}

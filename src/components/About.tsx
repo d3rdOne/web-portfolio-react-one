@@ -4,7 +4,7 @@ import { AnimateChangeInHeight } from "./Utilities/AnimateChangeInHeight";
 const About = () => {
   return (
     <section
-      className="max-h-full flex flex-col items-center px-8 bg-white text-gray-900"
+      className="max-h-full flex flex-col items-center px-8 bg-gray-100 text-gray-900"
       id="about"
     >
       <div className="w-full sm:max-w-screen-sm md:max-w-screen-md  lg:max-w-screen-xl pt-8">

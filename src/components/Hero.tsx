@@ -9,7 +9,7 @@ const Hero = () => {
   const roles = ["Software Developer", "Frontend Developer"];
   return (
     <>
-      <div className="md:py-44 bg-white text-gray-500 sm:flex sm:justify-center p-4 bg-[url('../assets/hero-bg.jpg')]">
+      <div className="md:py-44 bg-gray-100 text-gray-500 sm:flex sm:justify-center p-4 bg-[url('../assets/hero-bg.jpg')]">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{

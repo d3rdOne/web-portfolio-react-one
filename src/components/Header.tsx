@@ -18,11 +18,11 @@ const Header = () => {
         initial={{ opacity: 0, translateY: -40 }}
         animate={{ opacity: 1, translateY: 0 }}
         transition={{ delay: 0.8 }}
-        className="min-w-screen items-center md:flex md:justify-center md:bg-white "
+        className="min-w-screen items-center md:flex md:justify-center md:bg-gray-100 "
       >
         <div className="w-full md:max-w-screen-xl md:flex md:justify-between">
           <div
-            className={`flex items-center justify-between relative z-20 bg-white px-2 ${
+            className={`flex items-center justify-between relative z-20 bg-gray-100 px-2 ${
               !showNav && "max-md:shadow-md"
             }`}
           >
@@ -58,7 +58,7 @@ const Header = () => {
             id="nav-links"
             className={`${
               showNav ? "block" : "hidden"
-            } tracking-wide px-2 pt-2 pb-2 sm:py-2 md:flex md-:gap-1 transition bg-white shadow-lg md:shadow-none`}
+            } tracking-wide px-2 pt-2 pb-2 sm:py-2 md:flex md-:gap-1 transition bg-gray-100 shadow-lg md:shadow-none`}
           >
             <a
               href="#home"

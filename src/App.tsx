@@ -1,30 +1,40 @@
+import Headroom from "react-headroom";
+import "./App.css";
+import About from "./components/About";
+import Header from "./components/Header";
 
-import Headroom from 'react-headroom'
-import './App.css'
-import About from './components/About'
-import Header from './components/Header'
+import Hero from "./components/Hero";
+import Footer from "./components/Footer";
+import Projects from "./components/Projects";
+import Experience from "./components/Experience";
+import { createContext } from "react";
 
-import Hero from './components/Hero'
-import Footer from './components/Footer'
-import Experience from './components/Experience'
-import Projects from './components/Projects'
+export const AppStateContext = createContext({});
 
 function App() {
   return (
     <>
-      <div id="home" className='min-h-screen bg-gradient-to-b from-gray-200 to-slate-100 border-box scroll-smooth' >
+      <AppStateContext.Provider
+        value={{
+          theme: "light",
+        }}
+      >
+        <div
+          id="home"
+          className="min-h-screen bg-white border-box scroll-smooth"
+        >
           <Headroom>
             <Header />
           </Headroom>
-
-          <Hero/>
+          <Hero></Hero>
           <About />
-          <Experience/>
+          <Experience />
           <Projects />
-          <Footer/>
-       </div>
+          <Footer />
+        </div>
+      </AppStateContext.Provider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
